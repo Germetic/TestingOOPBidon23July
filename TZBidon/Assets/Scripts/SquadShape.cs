@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class SquadShape : Shape {
 
@@ -16,10 +14,12 @@ public class SquadShape : Shape {
     {
         return _sideLength;
     }
-    public override void Initialize()
+    public override Shape Initialize()
     {
+        base.Initialize();
         _sideLength = UnityEngine.Random.Range(0, 100f);
         _name = "Squad";
+        return this;
     }
     public override string AboutInfo()
     {

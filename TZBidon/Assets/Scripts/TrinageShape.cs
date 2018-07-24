@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 
@@ -33,18 +31,20 @@ public class TrinageShape : Shape
         return Math.Pow(_aSide, 2) * Math.Pow(_bSide,2);
     }
 
-    public override void Initialize()
+    public override Shape Initialize()
     {
-        _height = UnityEngine.Random.Range(0, 100f);
-        _aSide = UnityEngine.Random.Range(0, 100f);
-        _bSide = UnityEngine.Random.Range(0, 100f);
-        _cSide = UnityEngine.Random.Range(0, 100f);
+        base.Initialize();
+        _height = UnityEngine.Random.Range(0, 15f);
+        _aSide = UnityEngine.Random.Range(0, 15f);
+        _bSide = UnityEngine.Random.Range(0, 15f);
+        _cSide = UnityEngine.Random.Range(0, 15f);
         _name = "Trinage";
+        return this;
     }
 
     public override string AboutInfo()
     {
-        string toString = _name + "| Area = " + GetArea() + "/ Color = " + GetColor() + " Height" + _height + " Hypotenuse " + GetHypotenuse();
+        string toString = _name + "| Area = " + GetArea() + "/ Color = " + GetColor() + " Height " + _height + " Hypotenuse " + GetHypotenuse();
         return toString;
     }
 }

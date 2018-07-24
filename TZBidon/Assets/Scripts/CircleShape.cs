@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using System;
 
 public class CircleShape : Shape {
@@ -18,14 +16,16 @@ public class CircleShape : Shape {
     {
         return _radius;
     }
-    public override void Initialize()
+    public override Shape Initialize()
     {
+        base.Initialize();
         _radius = UnityEngine.Random.Range(0, 100f);
         _name = "Circle";
+        return this;
     }
     public override string AboutInfo()
     {
-        string toString = _name + "| Area = " + GetArea() + "/ Color = " + GetColor() + " Radius" + GetRadius();
+        string toString = _name + "| Area = " + GetArea() + "/ Color = " + GetColor() + " Radius " + GetRadius();
         return toString;
     }
 }

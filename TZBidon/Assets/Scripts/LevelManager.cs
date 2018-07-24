@@ -1,28 +1,30 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
 
 public class LevelManager : MonoBehaviour {
 
-    public List<Shape> AllShapes;
+    public ShapesCreator ShapesCreator;
     public List<Shape> SpawnedShapes;
 
-    void Start ()
+    private void Start ()
     {
         SpawnedShapes = new List<Shape>();
-        int generationTimes = UnityEngine.Random.Range(1, 10);
+        int generationTimes = Random.Range(1, 10);
         GenerateRandomShapes(generationTimes);
         ShowSpawnedShapesInfo();
 	}
 
+    /// <summary>
+    /// Write info about current shape into console
+    /// </summary>
     private void ShowSpawnedShapesInfo()
     {
+        Debug.Log("<color=orange><b> ________________________</b></color>");
         for (int i = 0; i < SpawnedShapes.Count; i++)
-        {
-            
+        {           
             Debug.Log(SpawnedShapes[i].AboutInfo() + " \n <color=blue><b> ___ </b></color>");
         }
+        Debug.Log("<color=orange><b> ________________________</b></color>");
     }
 
     /// <summary>
@@ -33,10 +35,11 @@ public class LevelManager : MonoBehaviour {
     {
         for (int i = 0; i < generationTimes; i++)
         {
-            int currentShapeNumber = UnityEngine.Random.Range(0, AllShapes.Count - 1);
-            Shape spawnedSHape = Instantiate(AllShapes[currentShapeNumber], transform.position, Quaternion.identity);
-            SpawnedShapes.Add(spawnedSHape);
-            spawnedSHape.Initialize();
+            int currentShapeNumber = UnityEngine.Random.Range(0, ShapesCreator.GetShapesCount()-1);
+           
+            Shape newshape = ShapesCreator.GetShape((ShapesCreator.ShapeType)currentShapeNumber);
+            newshape.Initialize();
+            SpawnedShapes.Add(newshape);
         }
     }
 }

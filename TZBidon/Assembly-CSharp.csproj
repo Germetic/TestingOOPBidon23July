@@ -64,6 +64,7 @@
     <Compile Include="Assets\Scripts\CircleShape.cs" />
     <Compile Include="Assets\Scripts\LevelManager.cs" />
     <Compile Include="Assets\Scripts\Shape.cs" />
+    <Compile Include="Assets\Scripts\ShapesCreator.cs" />
     <Compile Include="Assets\Scripts\SquadShape.cs" />
     <Compile Include="Assets\Scripts\TrapezeShape.cs" />
     <Compile Include="Assets\Scripts\TrinageShape.cs" />

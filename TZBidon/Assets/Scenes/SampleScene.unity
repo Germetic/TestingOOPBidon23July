@@ -195,6 +195,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1191259595}
   - component: {fileID: 1191259594}
+  - component: {fileID: 1191259596}
   m_Layer: 0
   m_Name: LevelManager
   m_TagString: Untagged
@@ -213,12 +214,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8217de72094139243b9059761ebe73d1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  AllShapes:
-  - {fileID: 114386709396033270, guid: dcca98200903af2439019aff5e67008e, type: 2}
-  - {fileID: 114752698451504322, guid: ca4bf47a94193b84c8e4a410956a4f12, type: 2}
-  - {fileID: 114781246656963216, guid: 5963152f080efb14ea8e19d8f9dceadb, type: 2}
-  - {fileID: 114247495878418806, guid: e11c581ddf1720e4f9058dc85856de1b, type: 2}
-  SpawnedShapes: []
+  ShapesCreator: {fileID: 1191259596}
 --- !u!4 &1191259595
 Transform:
   m_ObjectHideFlags: 0
@@ -232,3 +228,14 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1191259596
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1191259593}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 01d46a84dfe323c41b409900e4d9fbf0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

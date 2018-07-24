@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class TrapezeShape : Shape {
 
@@ -16,12 +14,14 @@ public class TrapezeShape : Shape {
         double s = ((_bottomSide * _topSide) / 2) * _height;
         return s;
     }
-    public override void Initialize()
+    public override Shape Initialize()
     {
+        base.Initialize();
         _height = UnityEngine.Random.Range(0, 100f);
         _bottomSide = UnityEngine.Random.Range(0, 100f);
         _topSide = UnityEngine.Random.Range(0, 100f);
         _name = "Trapeze";
+        return this;
     }
     public override string AboutInfo()
     {
